@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Getting Started</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1> Container and Gridlines</h1>
+    <p>It is important to understand the relationship between the parent <b>container</b> and it's child <b>elements.</b> If you have worked with Flexbox, you should already be familiar with this.</p>
+    <h4>Container</h4>
+    <p>The parent element. You will be stting grid dimensions here. This of the container as a blueprint, where you will assign lengths and dimensions.</p>
+    <h4>Child Elements</h4>
+    <p>Here you will assign to each element how much of the grid the respective element will take up.</p>
+    <h4>Setting the Dimensions of Our Grid</h4>
+    <p>First things first, lets create our parent container using a <b>div</b> tag and give it <i>display: grid;</i> CSS. By assigning the div to have a display property of grid, you are preparing the browser to receive your grid commands.</p>
+    <p>Looking at our example on the first page, we can see that there are three rows. We can assign the rows a length using the CSS property <b>grid-template-rows</b>. For reference, our heights for the header and footer are <b>75px</b> and the height of our body is <b>300px</b>. Using the CSS command, you declare the length of the rows individually so the end result looks like this:</p>
+    <div class="figure">
+        <span>grid-template-rows: 75px 300px 75px;</span>
+    </div>
+    <p>The same syntax works with columns, utilizing the <b>grid-template-columns</b>. You can see from the picture that there's only one instance where we split into columns, so we should only need two rows. Remember that with width (say that 10 times fast), we try to use percentages where applicable. In our case, the percentages are 1/5th and 4/5th of the page. The CSS will look like this.</p>
+    <div class="figure">
+        <span>grid-template-columns: 20% 80%;</span>
+    </div>
+    <p>And with that, we've made our grid! If you were to render this in the broswer and inspect it using DevTools, you will notice that a grid appear on the page when you select that container. Awesome. Now before we start making child elements, lets take a look at the following figure to understand how this grid is formed.</p>
+</body>
+</html>
