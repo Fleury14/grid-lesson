@@ -27,7 +27,6 @@ h1 {
 
 main {
   display: grid;
-  width: 100%;
   grid-template-rows: 75px 300px 75px;
   grid-template-columns: minmax(150px, 1fr) 4fr;
   grid-column-gap: 10px;
@@ -68,6 +67,22 @@ main .ex-foot {
   background-color: #ff9999;
 }
 
+@media only screen and (max-width: 768px) {
+  main {
+    grid-template-rows: 75px 150px 300px 75px;
+    grid-template-columns: 100%;
+  }
+  main .ex-head, main .ex-foot, main .ex-main {
+    grid-column: 1 / 2;
+  }
+  main .ex-main {
+    grid-row: 3 / 4;
+  }
+  main .ex-foot {
+    grid-row: 4 / 5;
+  }
+}
+
 .figure {
   border: 1px solid #4d9900;
   padding: 10px;
@@ -87,7 +102,18 @@ main .ex-foot {
 }
 
 .code-box .indent-1 {
+  display: inline-block;
   text-indent: 10px;
+}
+
+.code-box .indent-2 {
+  display: inline-block;
+  text-indent: 20px;
+}
+
+.code-box .indent-3 {
+  display: inline-block;
+  text-indent: 30px;
 }
 
 .example-1-img {

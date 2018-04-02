@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Bonus Time!</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Making our Grid Responsive</h1>
+    <p>So in order to make our grid responsive we will have to use <b>media queries</b>. Media queries allow us to apply CSS conditionally; in our case we want it to apply when the viewport reaches a certain height. In order to do so, we must first think about how we want the layout to change on a smaller viewport. Remember how we mentioned how important it is to have your layout decided before you start coding? This is another reason why.</p>
+
+    <h4>
+        So how does this apply to us?
+    </h4>
+    <p>So in our case, we can simply have all four sections in a straight line, one on top of another. We would only need to make one adjustment to our columns: We will have one column at 100%. For our rows, however, since we will be accounting for every section, we need to assign one additional row. Since we will be going header, aside, main, footer, lets go with <b>75px 150px 300px 75px</b></p>
+    <p>Lets start our media query:</p>
+    <div class="code-box">
+        <code>
+            <span>@media only screen and (max-width: 768px) { }</span><br>
+        </code>
+    </div>
+
+    <p>This media query make sure that whatever we put in the braces will only be applied if our view width is less than 768 pixels. So first lets adjust our grid definition.</p>
+    <div class="code-box">
+        <code>
+            <span>@media only screen and (max-width: 768px) {</span><br><br>
+            <span class="indent-1">.container {</span><br>
+            <span class="indent-2">grid-template-rows: 75px 150px 300px 75px;</span><br>
+            <span class="indent-2">grid-template-columns: 100%;</span><br>
+            <span class="indent-1">}</span><br>
+            <span>}</span>
+        </code>
+    </div>
+
+    <p>Now we've adjusted our grid container, but our child elements are kinda all over the place. Lets make some adjustments to our children.</p>
+    <p>First off, we need to make sure every element only goes from column 1 to column 2. This is okay in the event of our aside, since it's already set that way. But the other three will need to be adjusted. Lets try to do that in one line. Our media query should now look like this.</p>
+    <div class="code-box">
+        <code>
+            <span>@media only screen and (max-width: 768px) {</span><br><br>
+            <span class="indent-1">.container {</span><br>
+            <span class="indent-2">grid-template-rows: 75px 150px 300px 75px;</span><br>
+            <span class="indent-2">grid-template-columns: 100%;</span><br>
+            <span class="indent-1">}</span><br><br>
+            <span class="indent-1">main, header, footer {</span><br>
+            <span class="indent-2">grid-column: 1 / 2;</span><br>
+            <span class="indent-1">}</span><br><br>
+            <span>}</span>
+        </code>
+    </div>
+    <p>Now everything is lined up horizontally, but now we need to adjust the vertical layout. We know the nav is first, going from grid line 1 to grid line 2. That's how it is originally so we're okay there. The aside will be next, from row 2 to row 3, which is also already what we're set to so it's good. Our main should come next going from 3 / 4, and our footer going from 4 / 5. That's not what we have in our original grid, so lets fix that. Our final media query should look like this:</p>
+    <div class="code-box">
+        <code>
+            <span>@media only screen and (max-width: 768px) {</span><br><br>
+            <span class="indent-1">.container {</span><br>
+            <span class="indent-2">grid-template-rows: 75px 150px 300px 75px;</span><br>
+            <span class="indent-2">grid-template-columns: 100%;</span><br>
+            <span class="indent-1">}</span><br><br>
+            <span class="indent-1">main, header, footer {</span><br>
+            <span class="indent-2">grid-column: 1 / 2;</span><br>
+            <span class="indent-1">}</span><br><br>
+            <span class="indent-1">main {</span><br>
+            <span class="indent-2">grid-row: 3 / 4;</span><br>
+            <span class="indent-1">}</span><br><br>
+            <span class="indent-1">main, header, footer {</span><br>
+            <span class="indent-2">grid-columns: 4 / 5;</span><br>
+            <span class="indent-1">}</span><br><br>
+            <span>}</span>
+        </code>
+    </div>
+    <p>Now we've told the browser that when the width falls below 768 pixels, we move the main down to the area between grid lines 3 and 4, and the footer between lines 4 and 5. Your end result should look like below, although your colors will be different. Shrink your browser to see the results!</p>
+    <main>
+        <div class="ex-head">
+            <span>Header</span>
+        </div>
+        <div class="ex-aside">
+            <span>Aside</span>
+        </div>
+        <div class="ex-main">
+            <span>Main</span>
+        </div>
+        <div class="ex-foot">
+            <span>Footer</span>
+        </div>
+    </main>
+    <div class="link-box">
+        <a href="index.html">Back to the beginning</a>
+    </div>
+</body>
+</html>
