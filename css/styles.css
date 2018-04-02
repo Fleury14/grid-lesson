@@ -74,4 +74,23 @@ main .ex-foot {
   color: #eee;
   background-color: #4d9900;
 }
+
+.code-box {
+  background-color: #222;
+  color: #eee;
+  padding: 10px;
+  display: inline-block;
+}
+
+.code-box p {
+  margin: 0;
+}
+
+.code-box .indent-1 {
+  text-indent: 10px;
+}
+
+.example-1-img {
+  width: 60%;
+}
 /*# sourceMappingURL=styles.css.map */

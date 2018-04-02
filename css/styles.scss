@@ -79,3 +79,22 @@ main {
     color: #eee;
     background-color: $color-3;
 }
+
+.code-box {
+    background-color: #222;
+    color: #eee;
+    padding: 10px;
+    display: inline-block;
+
+    p {
+        margin: 0;
+    }
+
+    .indent-1 {
+        text-indent: 10px;
+    }
+}
+
+.example-1-img {
+    width: 60%;
+}

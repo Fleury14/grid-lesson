@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Child Elements</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <h1>Creating Child elements</h1>
+    <p>Now that we've made our grid, it's time to start putting things in it. Let's get the HTML part done first. Let's create our four HTML elements <b>inside</b> our container. It is very important that you put our child elements inside the parent container because this container is where we stored our grid information using the <b>grid-template-rows</b> and <b>grid-template-columns</b> commands. Your code should look something like this.</p>
+    <div class="code-box">
+        <code>
+            <p>&#60;div class="container"&#62;</p>
+            <p class="indent-1">&#60;header&#62;&#60;/header&#62;</p>
+            <p class="indent-1">&#60;main&#62;&#60;/main&#62;</p>
+            <p class="indent-1">&#60;aside&#62;&#60;/aside&#62;</p>
+            <p class="indent-1">&#60;footer&#62;&#60;/footer&#62;</p>
+            <p>&#60;/div&#62;</p>
+        </code>
+    </div>
+    <p>Now that we have our child elements, lets start using CSS to assign where these elements will be placed on the grid. But first, lets take a look at our grid thus far.</p>
+    <div class="link-box">
+        <img class="example-1-img" src="img/grid-example-1.jpg" alt="Grid Example">
+    </div>
+    
+    <h4>Grid Lines</h4>
+    <p>Take a look at the above example. You'll notice the width of the columns and the height of the columns are what we declared with the template commands, so that's great. More importantly, notice the number across the top and to the left. Every grid line is assigned a number, starting at 1. So for our columns, #1 is the far left of the container as noted by the number. Grid line #2 is the next vertical line 20% to the right. Finally, grid line #3 is at the far right of the page.</p>
+    <p>To assign how much space a child element will take up, you must tell the browser the <b>starting grid line</b> and the <b>ending-grid-line</b>. Let's go over our first element and see that in action.</p>
+    <h4>Styling the header</h4>
+    <p>So for our header, lets first look at the columns. We want it to take up the entire screen horizontally. So it's going to start at grid line #1 (The red #1) and end at grid line #3 (The red #3). You assign these using the css commands <b>grid-column-start</b> and <b>grid-column-end</b>. Your final result should look like this:</p>
+    <div class="figure">
+        <span>grid-column-start: 1;</span><br>
+        <span>grid-column-end: 3;</span>
+    </div>
+    <p>You may be able to see how this applies to rows as well. We want to start at the top of the screen, so that would be grid line #1 (the green #1 in the figure above), and we only want to go one row down, so the ending point would be grid line #2 (the green #2). The commands for this are <b>grid-row-start</b> and <b>grid-row-end</b>. Here's what the css should look like for the entire element after our command. Let's also give it a background color so we can see our work. </p>
+    <div class="figure">
+        <span>grid-column-start: 1;</span><br>
+        <span>grid-column-end: 3;</span><br>
+        <span>grid-row-start: 1;</span><br>
+        <span>grid-row-end: 2;</span><br>
+        <span>background-color: pink;</span>
+    </div>
+    <p>Reload your page and we now have a pink nav bar!</p>
+
+    <h4>Styling our aside: Using shorthand</h4>
+    <p>Using our figure from above, we can see the starting and end points for our aside section. Instead of typing out the two CSS commands each for our column and rows, let's use some shorthand. Utilizing the <b>grid-row</b> command, we can list both the starting point and the ending point seperated by a /. The same thing works for the command <b>grid-column</b>. We know for the columns, we start at the far left (1), and go to the next immediate grid line (2), so we would write that as <b>grid-column: 1 / 2;</b>. Following the same rule with our row, and assigning a background color, you should end up with the following CSS for our aside tag:</p>
+    <div class="figure">
+        <span>grid-column: 1 / 2;</span><br>
+        <span>grid-row: 2 / 3;</span><br>
+        <span>background-color: green;</span>
+    </div>
+
+    <h4>Style our main: Even more shorthand</h4>
+    <p>Because that wasn't enough shorthand for us, you can also declare the starting point for rows and columns all in one line using the <b>grid-area</b> property. You may be familiar with this sort of shorthand from using the <b>margin</b> property, but these number do need to be seperated with a /. The syntax is as follows:</p>
+    <p><b>grid-area: (grid-row-start) / (grid-column-start) / (grid-row-end) / (grid-column-end)</b></p>
+    <p>Please note the order, it's very important! Notice that it asks for the two starting points first. Following our image above, the main section should start on column 2, and end on column 3. It should also start on row 2 and go on to row 3. Giving that a new color as well and we end up with something like this:</p>
+    <div class="figure">
+        <span>grid-area: 2 / 2 / 3 / 3;</span><br>
+        <span>background-color: cyan;</span>
+    </div>
+
+    <h4>Style our footer: The span command</h4>
+    <p>An alternative way to declare how much of the grid you want to use is through use of the <b>span</b> command. In this case, instead of designating and end point, you can tell the browser how many grid blocks you want the element to take up. So for our footer, when you look at our columns, you can see that you want it to start on grid line 1. Instead of declaring the endpoint as grid line three, we can simply write <b>span 2</b> and that will tell the browser that we want our footer to take up 2 blocks.</p>
+    <p>This may seem a little confusing at first, and you may be asking yourself why not just declare the starting point and the ending point? The answer is personal preference, but you may come to find that when you design more elaborate grids, it may be useful to simply declare how long or tall you want your div to be using <b>span</b> rather than trying to find the exact gridline. Our footer CSS ends like this.</p>
+    <div class="figure">
+        <span>grid-column: 1 / span 2;</span><br>
+        <span>grid-row: 2 / 3;</span><br>
+        <span>background-color: yellow;</span>
+    </div>
+    <p>Side note: You can use the span command at the beginning of a grid command to declare the equiavlent of "Take up two spaces, ending at gridline 4". Experiment with different commands to get comfortable with them.</p>
+    <p>You should now have your 4 color section, but you may notice a couple things off. On the last section, we'll touch on a few more concepts to finish it off.</p>
+    <div class="link-box">
+        <a href="last-touches.html">Finishing touches</a>
+    </div>
+</body>
+</html>
