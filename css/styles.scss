@@ -11,6 +11,7 @@ body {
     font-family: 'Lato', sans-serif;
     min-height: 100vh;
     font-weight: 200;
+    padding-bottom: 50px;
     
     h4 {
         color: darken($color-1, 20);
@@ -24,6 +25,7 @@ body {
         text-decoration: none;
     }
     text-align: center;
+    margin-top: 50px;
 }
 
 h1 {
@@ -126,4 +128,10 @@ main {
 
 .example-1-img {
     width: 60%;
+}
+
+footer {
+    font-size: 10px;
+    margin-top: 50px;
+    text-align: center;
 }
