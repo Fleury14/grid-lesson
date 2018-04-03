@@ -18,14 +18,14 @@
         <span>grid-column-gap: 10px;</span><br>
     </div>
     <p>Now we have some space in between our sections. You should notice that it didn't actually break up our header and footer even though that span multiple grid boxes. Grid-gap only effects grid lines outside of the areas that you have declared.</p>
-    <p>You may notice that if we shrink our browser, our aside section might get a little smaller than we liked. Is there a way to declare a minimum and maximum height? There sure is.</p>
+    <p>You may notice that if we shrink our browser, our aside section might get a little smaller than we would like. Is there a way to declare a minimum and maximum height? There sure is.</p>
 
     <h4>Minmaxing our aside</h4>
-    <p>When you declare the lengths or your columns and rows inside the parent container, you can use the <b>minmax()</b> command to ensure that the length will never fall outside of a certain value. The minmax will take two parameters, the minimum length and the maximum length. So when declaring our column lengths, lets try it out. Adjust your <b>grid-template-columns</b> inside our container to the following.</p>
+    <p>When you declare the lengths or your columns and rows inside the parent container, you can use the <b>minmax()</b> command to ensure that the length will never fall outside of a certain value. The minmax will take two parameters, the minimum length and the maximum length. Keep in mind that this only works when one of your values is a dynamix value that will may change based on the browser size, such as percent. So lets try this out where we declare our column lengths. Adjust your <b>grid-template-columns</b> inside our container to the following.</p>
     <div class="figure">
         <span>grid-template-columns: minmax(150px, 20%) 80%;</span><br>
     </div>
-    <p>Now lets explain what this is doing: This ensures that the width of that column will be 20% of the viewport<b>unless</b> it falls under 150 pixels. Neato!</p>
+    <p>Now lets explain what this is doing: This ensures that the width of that column will be 20% of the viewport <b>unless</b> it falls under 150 pixels. Neato!</p>
 
     <h4>The (fr)actional Unit</h4>
     <p>Have you ever wanted to divide your sections but didn't want to figure out the exact percentages? Then the fractional unit is for you. You can list a length followed by <b>fr</b> as a unit of measurement that represents a fraction of the available space. For example</p>
@@ -46,7 +46,7 @@
     </div>
     <p>Now we are utlizing fraction units. These are very useful when you would rather deal with width as a ratio as opposed to a raw percentage.</p>
     <h4>All done?</h4>
-    <p>Congratulations, we just made our first grid layout? You have come across a though while you were looking at the minmax stuff. This isn't very responsive! How can we rearrange this so that it looks cleaner on mobile phones? Check out the bonus content. (This does involve media queries, so make sure you are familiar with them)</p>
+    <p>Congratulations, we just made our first grid layout? You may have come across a though while you were looking at the minmax stuff. This isn't very responsive! How can we rearrange this so that it looks cleaner on mobile phones? Check out the bonus content. (This does involve media queries, so make sure you are familiar with them)</p>
     <div class="link-box">
         <a href="bonus.html">Bonus Time!</a>
     </div>

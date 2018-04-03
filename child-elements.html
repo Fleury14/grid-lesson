@@ -12,11 +12,11 @@
     <p>Now that we've made our grid, it's time to start putting things in it. Let's get the HTML part done first. Let's create our four HTML elements <b>inside</b> our container. It is very important that you put our child elements inside the parent container because this container is where we stored our grid information using the <b>grid-template-rows</b> and <b>grid-template-columns</b> commands. Your code should look something like this.</p>
     <div class="code-box">
         <code>
-            <p>&#60;div class="container"&#62;</p>
-            <p class="indent-1">&#60;header&#62;&#60;/header&#62;</p>
-            <p class="indent-1">&#60;main&#62;&#60;/main&#62;</p>
-            <p class="indent-1">&#60;aside&#62;&#60;/aside&#62;</p>
-            <p class="indent-1">&#60;footer&#62;&#60;/footer&#62;</p>
+            <p>&#60;div class="container"&#62;</p><br>
+            <p class="indent-1">&#60;header&#62;&#60;/header&#62;</p><br>
+            <p class="indent-1">&#60;main&#62;&#60;/main&#62;</p><br>
+            <p class="indent-1">&#60;aside&#62;&#60;/aside&#62;</p><br>
+            <p class="indent-1">&#60;footer&#62;&#60;/footer&#62;</p><br>
             <p>&#60;/div&#62;</p>
         </code>
     </div>
@@ -66,11 +66,11 @@
     <p>This may seem a little confusing at first, and you may be asking yourself why not just declare the starting point and the ending point? The answer is personal preference, but you may come to find that when you design more elaborate grids, it may be useful to simply declare how long or tall you want your div to be using <b>span</b> rather than trying to find the exact gridline. Our footer CSS ends like this.</p>
     <div class="figure">
         <span>grid-column: 1 / span 2;</span><br>
-        <span>grid-row: 2 / 3;</span><br>
+        <span>grid-row: 3 / 4;</span><br>
         <span>background-color: yellow;</span>
     </div>
     <p>Side note: You can use the span command at the beginning of a grid command to declare the equiavlent of "Take up two spaces, ending at gridline 4". Experiment with different commands to get comfortable with them.</p>
-    <p>You should now have your 4 color section, but you may notice a couple things off. On the last section, we'll touch on a few more concepts to finish it off.</p>
+    <p>You should now have your 4 color section, but you may notice a couple things are off. On the last section, we'll touch on a few more concepts to finish it off.</p>
     <div class="link-box">
         <a href="last-touches.html">Finishing touches</a>
     </div>
